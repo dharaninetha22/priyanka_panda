@@ -419,7 +419,7 @@ nav ul li a:hover{
 .luxury-stats{
   width:100%;
   position:relative;
-  padding:120px 70px;
+  padding:50px 70px;
   overflow:hidden;
 }
 
@@ -448,16 +448,16 @@ nav ul li a:hover{
 
 .stats-top h2{
   color:#fff;
-  font-size:82px;
+  font-size:70px;
   line-height:0.95;
   font-family:'Cormorant Garamond',serif;
   font-weight:700;
-  margin-bottom:30px;
+  margin-bottom:10px;
 }
 
 .stats-top p{
   color:rgba(255,255,255,0.78);
-  font-size:19px;
+  font-size:16px;
   line-height:2;
   max-width:760px;
 }
@@ -471,7 +471,7 @@ nav ul li a:hover{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:30px;
-  margin-top:60px;
+  margin-top:10px;
 }
 
 /* =========================================
@@ -481,9 +481,9 @@ nav ul li a:hover{
 .stats-card{
   position:relative;
 
-  min-height:290px;
+  min-height:200px;
 
-  padding:38px 34px;
+  padding:38px 20px;
 
   border-radius:24px;
 
@@ -552,8 +552,8 @@ nav ul li a:hover{
 
 .stats-card h3{
   color:#d5a86c;
-  font-size:58px;
-  margin-bottom:22px;
+  font-size:30px;
+  margin-bottom:8px;
   font-weight:700;
 }
 
@@ -567,7 +567,7 @@ nav ul li a:hover{
   font-family:'Cormorant Garamond',serif;
   font-weight:700;
 
-  margin-bottom:18px;
+  margin-bottom:5px;
 }
 
 /* TEXT */
@@ -575,7 +575,7 @@ nav ul li a:hover{
 .stats-card p{
   color:rgba(255,255,255,0.72);
 
-  font-size:17px;
+  font-size:16px;
   line-height:1.9;
 }
 
@@ -612,13 +612,13 @@ nav ul li a:hover{
 }
 
 .philosophy-card h3{
-  color:#fff;
+  color:#d5a86c;
 
   font-size:54px;
 
   font-family:'Cormorant Garamond',serif;
 
-  margin-bottom:18px;
+  margin-bottom:8px;
 }
 
 .philosophy-card p{
@@ -626,7 +626,7 @@ nav ul li a:hover{
 
   color:rgba(255,255,255,0.78);
 
-  font-size:19px;
+  font-size:16px;
   line-height:2;
 }
 
@@ -816,7 +816,7 @@ nav ul li a:hover{
 .expertise-section{
   width:100%;
   position:relative;
-  padding:120px 70px;
+  padding:50px 70px;
   overflow:hidden;
 }
 
@@ -846,19 +846,19 @@ nav ul li a:hover{
 .expertise-top h2{
   color:#fff;
 
-  font-size:78px;
+  font-size:70px;
   line-height:1;
 
   font-family:'Cormorant Garamond',serif;
   font-weight:700;
 
-  margin-bottom:24px;
+  margin-bottom:20px;
 }
 
 .expertise-top p{
   color:rgba(255,255,255,0.76);
 
-  font-size:18px;
+  font-size:16px;
   line-height:1.9;
 
   max-width:720px;
@@ -884,9 +884,9 @@ nav ul li a:hover{
 .expertise-card{
   position:relative;
 
-  min-height:250px;
+  min-height:200px;
 
-  padding:40px 34px;
+  padding:40px 24px;
 
   border-radius:22px;
 
@@ -957,8 +957,8 @@ nav ul li a:hover{
 ========================================= */
 
 .expertise-icon{
-  width:56px;
-  height:56px;
+  width:50px;
+  height:50px;
 
   border-radius:16px;
 
@@ -966,9 +966,9 @@ nav ul li a:hover{
   align-items:center;
   justify-content:center;
 
-  font-size:28px;
+  font-size:20px;
 
-  margin-bottom:24px;
+  margin-bottom:10px;
 
   background:
   linear-gradient(
@@ -990,13 +990,13 @@ nav ul li a:hover{
 .expertise-card h3{
   color:#fff;
 
-  font-size:38px;
+  font-size:30px;
   line-height:1.2;
 
   font-family:'Cormorant Garamond',serif;
   font-weight:700;
 
-  margin-bottom:18px;
+  margin-bottom:8px;
 }
 
 /* =========================================
@@ -1006,7 +1006,7 @@ nav ul li a:hover{
 .expertise-card p{
   color:rgba(255,255,255,0.72);
 
-  font-size:17px;
+  font-size:16px;
   line-height:1.9;
 }
 
@@ -1144,7 +1144,7 @@ nav ul li a:hover{
 .premium-services{
   width:100%;
   position:relative;
-  padding:120px 60px;
+  padding:50px 60px;
   overflow:hidden;
 }
 
@@ -1173,19 +1173,19 @@ nav ul li a:hover{
 .services-top h2{
   color:#fff;
 
-  font-size:82px;
+  font-size:70px;
   line-height:1;
 
   font-family:'Cormorant Garamond',serif;
   font-weight:700;
 
-  margin-bottom:24px;
+  margin-bottom:20px;
 }
 
 .services-top p{
   color:rgba(255,255,255,0.75);
 
-  font-size:20px;
+  font-size:16px;
   line-height:1.8;
 
   max-width:700px;
@@ -1211,7 +1211,7 @@ nav ul li a:hover{
 .service-card{
   width:100%;
 
-  min-height:150px;
+  min-height:100px;
 
   position:relative;
 
@@ -1221,7 +1221,7 @@ nav ul li a:hover{
 
   gap:30px;
 
-  padding:42px 42px;
+  padding:42px 30px;
 
   border-radius:24px;
 
@@ -1299,19 +1299,19 @@ nav ul li a:hover{
 .service-content h3{
   color:#fff;
 
-  font-size:54px;
+  font-size:30px;
   line-height:1.1;
 
   font-family:'Cormorant Garamond',serif;
   font-weight:700;
 
-  margin-bottom:16px;
+  margin-bottom:8px;
 }
 
 .service-content p{
   color:rgba(255,255,255,0.72);
 
-  font-size:18px;
+  font-size:16px;
   line-height:1.9;
 
   max-width:1050px;
@@ -1657,7 +1657,7 @@ nav ul li a:hover{
 .testimonial-section{
   width:100%;
   position:relative;
-  padding:120px 46px;
+  padding:50px 46px;
   overflow:hidden;
 }
 
@@ -1687,19 +1687,19 @@ nav ul li a:hover{
 .testimonial-top h2{
   color:#fff;
 
-  font-size:82px;
+  font-size:70px;
   line-height:1;
 
   font-family:'Cormorant Garamond',serif;
   font-weight:700;
 
-  margin-bottom:24px;
+  margin-bottom:20px;
 }
 
 .testimonial-top p{
   color:rgba(255,255,255,0.74);
 
-  font-size:20px;
+  font-size:16px;
   line-height:1.9;
 
   max-width:700px;
@@ -1723,7 +1723,7 @@ nav ul li a:hover{
 
   position:relative;
 
-  padding:55px 48px;
+  padding:30px 48px;
 
   border-radius:26px;
 
@@ -1804,7 +1804,7 @@ nav ul li a:hover{
 .testimonial-card h3{
   color:rgba(255,255,255,0.92);
 
-  font-size:38px;
+  font-size:16px;
   line-height:1.7;
 
   font-style:italic;
@@ -1824,11 +1824,11 @@ nav ul li a:hover{
 .testimonial-user h4{
   color:#fff;
 
-  font-size:34px;
+  font-size:17px;
 
   font-family:'Cormorant Garamond',serif;
 
-  margin-bottom:8px;
+  margin-bottom:5px;
 }
 
 .testimonial-user span{
@@ -1836,15 +1836,15 @@ nav ul li a:hover{
 
   color:rgba(255,255,255,0.72);
 
-  font-size:18px;
+  font-size:17px;
 
-  margin-bottom:6px;
+  margin-bottom:5px;
 }
 
 .testimonial-user p{
   color:#d5a86c;
 
-  font-size:20px;
+  font-size:16px;
 }
 
 /* =========================================
@@ -2009,19 +2009,19 @@ nav ul li a:hover{
 .insights-top h2{
   color:#fff;
 
-  font-size:82px;
+  font-size:70px;
   line-height:1;
 
   font-family:'Cormorant Garamond',serif;
   font-weight:700;
 
-  margin-bottom:24px;
+  margin-bottom:20px;
 }
 
 .insights-top p{
   color:rgba(255,255,255,0.76);
 
-  font-size:19px;
+  font-size:16px;
   line-height:1.9;
 
   max-width:720px;
@@ -2047,7 +2047,7 @@ nav ul li a:hover{
 .insight-card{
   position:relative;
 
-  min-height:430px;
+  min-height:350px;
 
   padding:26px 24px;
 
@@ -2339,7 +2339,7 @@ nav ul li a:hover{
   align-items:center;
   justify-content:center;
 
-  padding:100px 20px;
+  padding:50px 20px;
 }
 
 /* =========================================
@@ -2386,13 +2386,13 @@ nav ul li a:hover{
 .final-cta-container h2{
   color:#fff;
 
-  font-size:96px;
+  font-size:60px;
   line-height:1.05;
 
   font-family:'Cormorant Garamond',serif;
   font-weight:700;
 
-  margin-bottom:34px;
+  margin-bottom:20px;
 }
 
 /* =========================================
@@ -2402,7 +2402,7 @@ nav ul li a:hover{
 .final-cta-container p{
   color:rgba(255,255,255,0.78);
 
-  font-size:22px;
+  font-size:18px;
   line-height:2;
 
   max-width:850px;
@@ -2421,7 +2421,7 @@ nav ul li a:hover{
 
   gap:24px;
 
-  margin-bottom:90px;
+  margin-bottom:40px;
 }
 
 /* GOLD BUTTON */
@@ -2531,7 +2531,7 @@ nav ul li a:hover{
 .final-stat-item h3{
   color:#d5a86c;
 
-  font-size:44px;
+  font-size:25px;
   font-weight:700;
 
   margin-bottom:8px;
