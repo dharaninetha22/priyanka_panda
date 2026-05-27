@@ -1206,11 +1206,66 @@ nav ul li a:hover{
 
   font-size:16px;
   line-height:1.9;
-    margin-bottom:35px;
+    margin-bottom:10px;
 
   flex-grow:1; /* SAME ALIGNMENT */
 }
+/* =========================================
+   CHIP TAGS
+========================================= */
 
+.expertise-tags{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:12px;
+
+  margin-bottom:26px;
+}
+
+/* SINGLE CHIP */
+
+.expertise-tags span{
+
+  padding:5px 18px;
+
+  border-radius:40px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(213,168,108,0.16),
+    rgba(213,168,108,0.05)
+  );
+
+  border:1px solid rgba(213,168,108,0.28);
+
+  color:#f4d08a;
+
+  font-size:13px;
+  font-weight:500;
+
+  letter-spacing:0.4px;
+
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+
+  transition:0.4s ease;
+}
+
+/* HOVER */
+
+.expertise-tags span:hover{
+
+  background:#d5a86c;
+
+  color:#000;
+
+  transform:translateY(-3px);
+
+  box-shadow:
+  0 8px 20px rgba(213,168,108,0.20);
+}
 /* =========================================
    BOTTOM CTA
 ========================================= */
