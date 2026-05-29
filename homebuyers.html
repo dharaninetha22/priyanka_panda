@@ -15,114 +15,472 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* =========================================
+       RESPONSIVE NAVBAR STYLES
+    ========================================= */
 
+    /* NAVBAR */
+    .navbar {
+      width: 100%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: relative;
+      z-index: 10;
+      padding: 0 40px;
+    }
+
+    /* HAMBURGER MENU */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 20;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background-color: #d5a86c;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* NAVIGATION MENU */
+    .nav-menu {
+      display: flex;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 42px;
+      list-style: none;
+    }
+
+    /* NAV ITEMS WITH DROPDOWN */
+    .nav-item-dropdown {
+      position: relative;
+    }
+
+    .nav-link-dropdown {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      transition: 0.4s;
+      position: relative;
+    }
+
+    .dropdown-arrow {
+      font-size: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-item-dropdown:hover .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* SUBMENU */
+    .submenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: linear-gradient(135deg, rgba(20,20,30,0.98) 0%, rgba(30,25,40,0.98) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(213,168,108,0.3);
+      border-radius: 12px;
+      padding: 12px 0;
+      list-style: none;
+      min-width: 220px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      margin-top: 10px;
+    }
+
+    .nav-item-dropdown:hover .submenu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .submenu li {
+      margin: 0;
+    }
+
+    .submenu li a {
+      display: block;
+      padding: 12px 24px;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-left: 3px solid transparent;
+    }
+
+    .submenu li a:hover {
+      background: rgba(213,168,108,0.1);
+      color: #d5a86c;
+      border-left-color: #d5a86c;
+      padding-left: 28px;
+    }
+
+    /* =========================================
+       MOBILE RESPONSIVE STYLES
+    ========================================= */
+
+    @media (max-width: 992px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, rgba(20,20,30,0.99) 0%, rgba(30,25,40,0.99) 100%);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        border-bottom: 1px solid rgba(213,168,108,0.2);
+      }
+
+      .nav-menu.active {
+        max-height: 600px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        padding: 20px 0;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 15px 40px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        transition: all 0.3s ease;
+      }
+
+      nav ul li a:hover,
+      nav ul li a.active {
+        background: rgba(213,168,108,0.1);
+        color: #d5a86c;
+        padding-left: 50px;
+      }
+
+      nav ul li a.active::after {
+        content: none;
+      }
+
+      /* MOBILE SUBMENU */
+      .nav-item-dropdown {
+        position: relative;
+        width: 100%;
+      }
+
+      .nav-link-dropdown {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 40px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .submenu {
+        position: static;
+        background: rgba(213,168,108,0.05);
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: max-height 0.3s ease;
+        box-shadow: none;
+        margin-top: 0;
+      }
+
+      .nav-item-dropdown:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+
+      .submenu.active {
+        max-height: 300px;
+      }
+
+      .submenu li a {
+        padding: 12px 60px !important;
+        border-left: none;
+        border-top: 1px solid rgba(213,168,108,0.15);
+        font-size: 13px;
+      }
+
+      .submenu li a:hover {
+        padding-left: 70px !important;
+        border-left: none;
+      }
+
+      .nav-btn {
+        width: 100%;
+        padding: 15px 40px;
+        font-size: 13px;
+        margin: 10px 0 0 0;
+      }
+
+      /* MOBILE CTA BUTTON */
+      .mobile-cta {
+        width: 100%;
+        display: none;
+      }
+
+      .mobile-cta button {
+        width: calc(100% - 80px) !important;
+        margin: 15px 40px !important;
+        border-radius: 8px;
+      }
+
+      .nav-menu.active .mobile-cta {
+        display: block;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 0 20px;
+        height: 60px;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .hero1 {
+        padding: 0;
+      }
+
+      .logo img {
+        width: 80px;
+        height: 50px;
+      }
+
+      nav ul li a {
+        font-size: 13px;
+        padding: 12px 30px;
+      }
+
+      .submenu li a {
+        padding: 10px 50px !important;
+      }
+
+      .mobile-cta button {
+        width: calc(100% - 60px) !important;
+        margin: 15px 30px !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="home-buyer-fixedbg">
     <!-- =========================================
-     HOME BUYERS HERO SECTION
+     NAVBAR SECTION
+========================================= -->
+<!-- HERO SECTION -->
+
+  <section class="hero1">
+
+    <!-- BACKGROUND -->
+    <!-- <div class="hero-bg"></div> -->
+    <!-- <div class="overlay"></div> -->
+    <!-- BACKGROUND -->
+
+<div class="buyers-overlay"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+      <div class="logo">
+        <img src="https://dprstorage.b-cdn.net/RW/leadgen/pp%20logo.png" alt="Priyanka Logo" />
+      </div>
+
+      <!-- HAMBURGER MENU ICON -->
+      <div class="hamburger" id="hamburgerMenu" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav id="navMenu" class="nav-menu">
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Expertise</a></li>
+          <li class="nav-item-dropdown">
+            <a href="#" class="nav-link-dropdown" id="servicesToggle">Services <span class="dropdown-arrow">▼</span></a>
+            <ul class="submenu" id="servicesSubmenu">
+              <li><a href="#">Digital Marketing</a></li>
+              <li><a href="#">Brand Consulting</a></li>
+              <li><a href="#">Sales Consulting</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Insights</a></li>
+          <li class="mobile-cta">
+            <button class="nav-btn" onclick="openPopupForm()">Book Consultation</button>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <!-- HERO CONTENT -->
+
+    <section class="buyers-hero">
+
+
+
+
+<!-- OVERLAY -->
+
+
+
+<!-- CONTENT -->
+
+<div class="buyers-container">
+
+<!-- LEFT CONTENT -->
+
+<div class="buyers-left fade-up">
+
+  <!-- TAG -->
+
+  <div class="buyers-tag">
+    FOR HOME BUYERS & INVESTORS
+  </div>
+
+  <!-- TITLE -->
+
+  <h1>
+    Not sure which property
+in Hyderabad is right for you?
+  </h1>
+
+  <!-- DESCRIPTION -->
+
+  <p>
+  Share your goal with me. I'll tell you exactly where to look
+  </p>
+
+  <!-- BUTTONS -->
+
+  <div class="buyers-buttons">
+
+    <button class="gold-buyers-btn" onclick="openPopupForm()">
+      Talk To Priyanka
+    </button>
+
+    <!-- <button class="transparent-buyers-btn">
+      Explore Projects
+    </button> -->
+
+  </div>
+
+  <!-- STATS -->
+
+  <!-- <div class="buyers-stats">
+
+    <div class="buyers-stat">
+
+      <h3>500+</h3>
+
+      <span>Happy Clients</span>
+
+    </div>
+
+    <div class="buyers-stat">
+
+      <h3>100+</h3>
+
+      <span>Projects Consulted</span>
+
+    </div>
+
+    <div class="buyers-stat">
+
+      <h3>15+</h3>
+
+      <span>Years Experience</span>
+
+    </div>
+
+  </div> -->
+
+</div>
+
+</div>
+
+
+
+</div>
+
+</section>
+
+    <!-- SCROLL INDICATOR -->
+
+    <div class="scroll-indicator">
+
+      <span class="scroll-texts">SCROLL</span>
+
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+
+    </div>
+
+  </section>
+<!-- =========================================
+ HOME BUYERS HERO SECTION
 ========================================= -->
 
-<section class="buyers-hero">
 
-  <!-- BACKGROUND -->
+  
 
-  <div class="buyers-bg"></div>
-
-  <!-- OVERLAY -->
-
-  <div class="buyers-overlay"></div>
-
-  <!-- CONTENT -->
-
-  <div class="buyers-container">
-
-    <!-- LEFT CONTENT -->
-
-    <div class="buyers-left fade-up">
-
-      <!-- TAG -->
-
-      <div class="buyers-tag">
-        FOR HOME BUYERS & INVESTORS
-      </div>
-
-      <!-- TITLE -->
-
-      <h1>
-        Not sure which property
-in Hyderabad is right for you?
-      </h1>
-
-      <!-- DESCRIPTION -->
-
-      <p>
-      Share your goal with me. I'll tell you exactly where to look
-      </p>
-
-      <!-- BUTTONS -->
-
-      <div class="buyers-buttons">
-
-        <button class="gold-buyers-btn">
-          Talk To Priyanka
-        </button>
-
-        <!-- <button class="transparent-buyers-btn">
-          Explore Projects
-        </button> -->
-
-      </div>
-
-      <!-- STATS -->
-
-      <!-- <div class="buyers-stats">
-
-        <div class="buyers-stat">
-
-          <h3>500+</h3>
-
-          <span>Happy Clients</span>
-
-        </div>
-
-        <div class="buyers-stat">
-
-          <h3>100+</h3>
-
-          <span>Projects Consulted</span>
-
-        </div>
-
-        <div class="buyers-stat">
-
-          <h3>15+</h3>
-
-          <span>Years Experience</span>
-
-        </div>
-
-      </div> -->
-
-    </div>
-
-  </div>
-
-  <!-- SCROLL -->
-
-  <div class="scroll-indicator">
-
-    <span class="scroll-texts">
-      SCROLL
-    </span>
-
-    <div class="mouse">
-      <div class="wheel"></div>
-    </div>
-
-  </div>
-
-</section>  
 
 <!-- =========================================
      BUYERS SERVICES ZIG ZAG SECTION
@@ -258,9 +616,9 @@ in Hyderabad is right for you?
 
     <div class="buyers-cta-buttons">
 
-      <a href="#" class="buyers-primary-btn">
+      <button onclick="openPopupForm()" class="buyers-primary-btn">
         Book a Free Call
-      </a>
+      </button>
 
       <a href="#" class="buyers-secondary-btn">
         WhatsApp Me
@@ -392,9 +750,210 @@ in Hyderabad is right for you?
 
   </footer>
 
+  <!-- =========================================
+     POPUP FORM OVERLAY
+========================================= -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-container">
+      <button class="popup-close" onclick="closePopupForm()">&times;</button>
+      
+      <div class="popup-header">
+        <h2>Let's Talk About Your Property Goals</h2>
+        <p>Share your details and I'll get back to you within 24 hours</p>
+      </div>
 
+      <form class="popup-form" id="popupForm" onsubmit="handleFormSubmit(event)">
+        <div class="popup-form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+        </div>
+
+        <div class="popup-form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+
+        <div class="popup-form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+        </div>
+
+        <div class="popup-form-group">
+          <label for="budget">Budget Range</label>
+          <select id="budget" name="budget" style="background:rgba(255,255,255,0.05); border:1px solid rgba(213,168,108,0.3); color:#fff; padding:12px 16px; border-radius:8px; font-family:'Poppins', sans-serif; font-size:14px; transition:all 0.3s ease;" required>
+            <option value="" style="background:#1a1a2e; color:#fff;">Select budget range</option>
+            <option value="20-50" style="background:#1a1a2e; color:#fff;">20 - 50 Lakhs</option>
+            <option value="50-1cr" style="background:#1a1a2e; color:#fff;">50 Lakhs - 1 Crore</option>
+            <option value="1-2cr" style="background:#1a1a2e; color:#fff;">1 - 2 Crores</option>
+            <option value="2-5cr" style="background:#1a1a2e; color:#fff;">2 - 5 Crores</option>
+            <option value="5cr+" style="background:#1a1a2e; color:#fff;">5+ Crores</option>
+          </select>
+        </div>
+
+        <div class="popup-form-group">
+          <label for="propertyType">Property Type</label>
+          <select id="propertyType" name="propertyType" style="background:rgba(255,255,255,0.05); border:1px solid rgba(213,168,108,0.3); color:#fff; padding:12px 16px; border-radius:8px; font-family:'Poppins', sans-serif; font-size:14px; transition:all 0.3s ease;" required>
+            <option value="" style="background:#1a1a2e; color:#fff;">Select property type</option>
+            <option value="apartment" style="background:#1a1a2e; color:#fff;">Apartment</option>
+            <option value="villa" style="background:#1a1a2e; color:#fff;">Villa</option>
+            <option value="plot" style="background:#1a1a2e; color:#fff;">Plot</option>
+            <option value="commercial" style="background:#1a1a2e; color:#fff;">Commercial</option>
+            <option value="investment" style="background:#1a1a2e; color:#fff;">Investment</option>
+          </select>
+        </div>
+
+        <div class="popup-form-group">
+          <label for="message">Tell Me More</label>
+          <textarea id="message" name="message" placeholder="What are you looking for? Any specific requirements?" required></textarea>
+        </div>
+
+        <div class="popup-form-group checkbox">
+          <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+          <label for="agreeTerms">I agree to be contacted via email, phone, or WhatsApp</label>
+        </div>
+
+        <button type="submit" class="popup-submit-btn">Send My Details</button>
+      </form>
+    </div>
+  </div>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+      <!-- Mobile Menu and Submenu JavaScript -->
+      <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+          const hamburger = document.getElementById('hamburgerMenu');
+          const navMenu = document.getElementById('navMenu');
+          
+          hamburger.classList.toggle('active');
+          navMenu.classList.toggle('active');
+        }
+
+        // Toggle Submenu on Mobile
+        document.addEventListener('DOMContentLoaded', function() {
+          const servicesToggle = document.getElementById('servicesToggle');
+          const submenu = document.getElementById('servicesSubmenu');
+          const navMenu = document.getElementById('navMenu');
+
+          // Handle Services dropdown toggle on mobile
+          servicesToggle.addEventListener('click', function(e) {
+            // Only prevent default on mobile
+            if (window.innerWidth <= 992) {
+              e.preventDefault();
+              submenu.classList.toggle('active');
+              const arrow = servicesToggle.querySelector('.dropdown-arrow');
+              if (submenu.classList.contains('active')) {
+                arrow.style.transform = 'rotate(180deg)';
+              } else {
+                arrow.style.transform = 'rotate(0deg)';
+              }
+            }
+          });
+
+          // Close menu when clicking on regular links (not dropdown)
+          const navLinks = document.querySelectorAll('nav a:not(.nav-link-dropdown)');
+          navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+              const hamburger = document.getElementById('hamburgerMenu');
+              hamburger.classList.remove('active');
+              navMenu.classList.remove('active');
+              // Reset submenu
+              submenu.classList.remove('active');
+              const arrow = servicesToggle.querySelector('.dropdown-arrow');
+              arrow.style.transform = 'rotate(0deg)';
+            });
+          });
+
+          // Close menu when clicking outside
+          document.addEventListener('click', function(e) {
+            const navbar = document.querySelector('.navbar');
+            if (!navbar.contains(e.target)) {
+              const hamburger = document.getElementById('hamburgerMenu');
+              const navMenu = document.getElementById('navMenu');
+              hamburger.classList.remove('active');
+              navMenu.classList.remove('active');
+              // Reset submenu
+              submenu.classList.remove('active');
+              const arrow = servicesToggle.querySelector('.dropdown-arrow');
+              arrow.style.transform = 'rotate(0deg)';
+            }
+          });
+        });
+      </script>
+
+      <!-- Popup Form JavaScript -->
+      <script>
+        // Open popup form
+        function openPopupForm() {
+          document.getElementById('popupOverlay').classList.add('show');
+          document.body.style.overflow = 'hidden';
+        }
+
+        // Close popup form
+        function closePopupForm() {
+          document.getElementById('popupOverlay').classList.remove('show');
+          document.body.style.overflow = 'auto';
+          document.getElementById('popupForm').reset();
+        }
+
+        // Close popup when clicking outside the form container
+        document.addEventListener('DOMContentLoaded', function() {
+          const popupOverlay = document.getElementById('popupOverlay');
+          popupOverlay.addEventListener('click', function(e) {
+            if (e.target === popupOverlay) {
+              closePopupForm();
+            }
+          });
+        });
+
+        // Handle form submission
+        function handleFormSubmit(event) {
+          event.preventDefault();
+          
+          // Get form data
+          const formData = {
+            fullName: document.getElementById('fullName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            budget: document.getElementById('budget').value,
+            propertyType: document.getElementById('propertyType').value,
+            message: document.getElementById('message').value,
+            agreeTerms: document.getElementById('agreeTerms').checked
+          };
+
+          // Log the form data (you can send this to your backend)
+          console.log('Form Data:', formData);
+
+          // Show success message
+          alert('Thank you! Your details have been submitted. I will get back to you within 24 hours.');
+
+          // Close the popup and reset form
+          closePopupForm();
+
+          // Optional: Send to backend
+          // You can uncomment and modify the fetch call below to send data to your server
+          /*
+          fetch('your-backend-endpoint', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Success:', data);
+            alert('Thank you! Your details have been submitted. I will get back to you within 24 hours.');
+            closePopupForm();
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+            alert('There was an error submitting the form. Please try again.');
+          });
+          */
+        }
+      </script>
 
 </body>
 

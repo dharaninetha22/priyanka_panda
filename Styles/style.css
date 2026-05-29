@@ -45,6 +45,13 @@ body{
   padding:0 40px;
 }
 
+.hero1{
+  width:100%;
+  /* min-height:100vh; */
+  position:relative;
+  overflow:hidden;
+  padding:0 40px;
+}
 /* =========================
    BACKGROUND
 ========================= */
@@ -54,7 +61,7 @@ body{
   inset:0;
   background:
   
-  url('https://dprstorage.b-cdn.net/RW/leadgen/pphs3.png');
+  url('https://dprstorage.b-cdn.net/RW/leadgen/pphs3.png') ;
 
   background-size:cover;
   background-position:center;
@@ -4257,6 +4264,7 @@ nav ul li a:hover{
 
   display:flex;
   align-items:center;
+  flex-direction: column;
 
   padding:0 70px;
 }
@@ -4267,7 +4275,7 @@ nav ul li a:hover{
 .home-buyer-fixedbg{
   background:
   linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.72)),
-  url('https://dprstorage.b-cdn.net/RW/leadgen/priyankabg.png');
+  url('https://dprstorage.b-cdn.net/RW/leadgen/pp1.png');
 
   background-size:cover;
   background-position:center;
@@ -4322,12 +4330,13 @@ nav ul li a:hover{
 
 .buyers-container{
   width:100%;
-  max-width:1500px;
+  /* max-width:1500px; */
 
   margin:auto;
 
   position:relative;
   z-index:5;
+  text-align: center;
 }
 
 /* =========================================
@@ -4335,7 +4344,12 @@ nav ul li a:hover{
 ========================================= */
 
 .buyers-left{
-  max-width:860px;
+  /* max-width:860px; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* =========================================
@@ -4364,6 +4378,7 @@ nav ul li a:hover{
   margin-bottom:34px;
 
   backdrop-filter:blur(12px);
+  text-align: center;
 }
 
 /* =========================================
@@ -4997,7 +5012,7 @@ nav ul li a:hover{
   width:100%;
   position:relative;
 
-  padding:20px 40px;
+  padding:50px 40px;
 
   overflow:hidden;
 }
@@ -5012,7 +5027,7 @@ nav ul li a:hover{
 
   margin:auto;
 
-  padding:30px 50px;
+  padding:60px 50px;
 
   border-radius:28px;
 
